@@ -30,13 +30,6 @@ abstract class AbstractProvider implements IProvider
     {
         $this->options = $options;
         $this->storage = $storage;
-
-        if (!$this->getClientId()) {
-            throw new InvalidArgumentException('client id is empty.');
-        }
-        if (!$this->getClientSecret()) {
-            throw new InvalidArgumentException('client secret is empty.');
-        }
     }
 
     /**
