@@ -1,0 +1,23 @@
+{
+  "name": "delz/oauth2-client",
+  "description": "oauth2客户端组件",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "徐威",
+      "email": "sheawey@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0.0",
+    "delz/storage": "dev-master",
+    "delz/common": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Delz\\OAuth2Client\\": "src/Delz/OAuth2Client"
+    }
+  }
+}
