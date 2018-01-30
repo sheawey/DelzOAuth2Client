@@ -16,8 +16,8 @@ class Factory
      * @var array
      */
     protected static $providers = [
-        'wechat' => 'Pitaya\Component\OAuth2Client\Provider\WeChat',
-        'alipay' => 'Pitaya\Component\OAuth2Client\Provider\Alipay'
+        'wechat' => 'Delz\OAuth2Client\Provider\WeChat',
+        'alipay' => 'Delz\OAuth2Client\Provider\Alipay'
     ];
 
     /**
