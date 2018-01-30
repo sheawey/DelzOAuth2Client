@@ -27,7 +27,7 @@ class Alipay extends AbstractProvider
     protected function getAuthorizationUrl($state)
     {
         $parameters = [
-            'app_id' => $this->getClientId(),
+            'app_id' => $this->getAppId(),
             'scope' => $this->getScope(),
             'redirect_uri' => $this->getRedirectUrl(),
             'state' => $state
@@ -131,6 +131,14 @@ class Alipay extends AbstractProvider
     protected function getAppId()
     {
         return $this->hasOption('app_id') ? $this->getOption('app_id') : $this->getClientId();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getClientId()
+    {
+        return $this->hasOption('client_id') ? $this->getOption('client_id') : $this->getOption('app_id');
     }
 
     /**
