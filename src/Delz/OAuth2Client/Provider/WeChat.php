@@ -1,6 +1,6 @@
 <?php
 
-namespace Pitaya\Component\OAuth2Client\Provider;
+namespace Delz\OAuth2Client\Provider;
 
 use Delz\OAuth2Client\AbstractProvider;
 use Delz\OAuth2Client\AccessToken;
