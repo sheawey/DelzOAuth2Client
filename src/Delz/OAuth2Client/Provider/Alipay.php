@@ -48,7 +48,7 @@ class Alipay extends AbstractProvider
             'sign_type' => 'RSA2',
             'timestamp' => date('Y-m-d H:i:s'),
             'version' => '1.0',
-            'grant_type' => 'code',
+            'grant_type' => 'authorization_code',
             'code' => $code
         ];
 
@@ -61,6 +61,10 @@ class Alipay extends AbstractProvider
         //支付宝默认返回是GBK编码，所以转化
         $body = iconv('GBK', 'UTF-8//IGNORE', $response->getBody());
         $data = json_decode($body, true);
+
+        if(isset($data['error_response'])) {
+            throw new \RuntimeException($data['error_response']['msg'] . ':' . $data['error_response']['sub_msg']);
+        }
 
         if (isset($data['alipay_system_oauth_token_response']['code'])) {
             throw new \RuntimeException($data['alipay_system_oauth_token_response']['msg']);
