@@ -132,6 +132,14 @@ class WeChat extends AbstractProvider
     }
 
     /**
+     * {@inheritdoc}
+     */
+    protected function getClientId()
+    {
+        return $this->hasOption('client_id') ? $this->getOption('client_id') : $this->getOption('appid');
+    }
+
+    /**
      * 对微信的请求封装
      *
      * @param string $url

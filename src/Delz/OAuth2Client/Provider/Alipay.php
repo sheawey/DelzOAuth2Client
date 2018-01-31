@@ -27,7 +27,7 @@ class Alipay extends AbstractProvider
     protected function getAuthorizationUrl($state)
     {
         $parameters = [
-            'app_id' => $this->getAppId(),
+            'app_id' => $this->getClientId(),
             'scope' => $this->getScope(),
             'redirect_uri' => $this->getRedirectUrl(),
             'state' => $state
@@ -125,16 +125,6 @@ class Alipay extends AbstractProvider
     public function getName()
     {
         return 'alipay';
-    }
-
-    /**
-     * 支付宝分配给开发者的应用ID
-     *
-     * @return string
-     */
-    protected function getAppId()
-    {
-        return $this->hasOption('app_id') ? $this->getOption('app_id') : $this->getClientId();
     }
 
     /**
