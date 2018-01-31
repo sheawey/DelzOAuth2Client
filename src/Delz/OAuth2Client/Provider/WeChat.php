@@ -140,6 +140,14 @@ class WeChat extends AbstractProvider
     }
 
     /**
+     * {@inheritdoc}
+     */
+    protected function getClientSecret()
+    {
+        return $this->hasOption('client_secret') ? $this->getOption('client_secret') : $this->getOption('secret');
+    }
+
+    /**
      * 对微信的请求封装
      *
      * @param string $url
