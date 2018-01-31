@@ -48,6 +48,10 @@ abstract class AbstractProvider implements IProvider
             throw new InvalidArgumentException('redirect url is empty.');
         }
 
+        if(!$this->getScope()) {
+            throw new InvalidArgumentException('scope is empty.');
+        }
+
         if ($this->isCsrf()) {
             if(!$this->storage) {
                 throw new InvalidArgumentException('storage is not set.');
